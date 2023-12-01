@@ -11,7 +11,7 @@ import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 
 
-// REVISAR LOS IMPORTS
+
 
 function App() {
 
