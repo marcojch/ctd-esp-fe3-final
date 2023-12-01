@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'}>
+    <nav className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'} >
       <Link to="/">Home</Link>
       <Link to="/favs">Favs</Link>
       <Link to="/contact">Contact</Link>

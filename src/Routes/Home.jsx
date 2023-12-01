@@ -2,23 +2,15 @@ import React from 'react';
 import Card from '../Components/Card';
 import { useCharContext } from '../Components/utils/global.context';   
 
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
-// REVISAR HOME
-
-const Home = ({ dentists }) => {
-
+const Home = ({users}) => {
   const { state } = useCharContext()
 
-
   return (
-    <main className="dentist-grid">
+    <div className='card-grid'>
       <h1>Home</h1>
-      <div className='card-grid'>
       {state.list && state.list.map(dentist => (
           <Card
+            users={users}
             key={dentist.id}
             id={dentist.id}
             name={dentist.name}
@@ -26,8 +18,7 @@ const Home = ({ dentists }) => {
           />
         ))}
       </div>
-    </main>
   );
 }
 
-export default Home;
+export default Home

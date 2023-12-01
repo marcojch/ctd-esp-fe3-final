@@ -4,10 +4,10 @@ import { useCharContext } from '../Components/utils/global.context';
 
 
 
-const Card = ({character, name, username, id }) => {
+const Card = ({users, name, username, id }) => {
   
   const { state, dispatch } = useCharContext();
-  const findFav = state.favs.find(fav => fav.id === character.id)
+  const findFav = state.favs.find(fav => fav.id === users.id)
     
   
   const addFav = () => {
@@ -15,19 +15,18 @@ const Card = ({character, name, username, id }) => {
     if(findFav){
       alert('Ya agregaste ese elemento a favoritos')
     } else {
-      dispatch({type: 'ADD_FAVORITE', payload: character})
+      dispatch({type: 'ADD_FAVORITE', payload: users})
       localStorage.setItem('favs', JSON.stringify(state.favs))
     }
   }
 
   return (
-    <div className="card">
+    <div className="card-grid" >
       
-      <Link to={`/dentist/${id}`}>Ver Dentista </Link>
-      <h2> {name} </h2>
-      <p>Username: {username}</p>
+      <Link to={`/dentist/${id}`}>Ver Dentista</Link>
+      <h2>{users.name}</h2>
+      <p>Username: {users.username}</p>
       <button onClick={addFav} className="favButton">Add fav</button>
-
     </div>
   );
 };
