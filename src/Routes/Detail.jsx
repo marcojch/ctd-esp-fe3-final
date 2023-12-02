@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { useCharContext } from '../Components/utils/global.context';  
 
 
 const Detail = () => {
-  const { state } = useCharContext()
   const [dentist, setDentist] = useState({});
   const { id } = useParams();
-  
-  
+
   useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then(response => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
         setDentist(response.data);
-      })
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+    fetchData();
   }, [id]);
 
   return (

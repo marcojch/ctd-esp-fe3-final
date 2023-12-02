@@ -1,11 +1,10 @@
-import React, {useContext,  } from 'react'; 
+import React from 'react'; 
 import Form from '../Components/Form';
 import { useCharContext } from '../Components/utils/global.context';  
 
 
 const Contact = () => {
   const { state } = useCharContext()
-
 
   return (
     <div className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'}>

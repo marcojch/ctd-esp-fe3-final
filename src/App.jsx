@@ -1,7 +1,5 @@
-
-import './index.css'
-import './index.css'
 import { Route, Routes } from 'react-router-dom'
+import './index.css'
 import Home from './Routes/Home'
 import Contact from './Routes/Contact'
 import Detail from './Routes/Detail'
@@ -9,13 +7,12 @@ import Favs from './Routes/Favs'
 import Form from './Components/Form'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
-
-
-
+import GlobalContext from './Components/utils/global.context'
 
 function App() {
 
   return (
+    <GlobalContext>
     <>
       <Navbar/>
       <Routes>
@@ -27,6 +24,7 @@ function App() {
           <Route path='/footer' element={<Footer/>}/>
       </Routes>
     </>
+    </GlobalContext>
   )
 }
-export default App;
+export default App

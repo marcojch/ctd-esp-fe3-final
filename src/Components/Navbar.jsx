@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
 import { useCharContext} from '../Components/utils/global.context';  
 
@@ -20,3 +20,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+

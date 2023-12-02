@@ -2,19 +2,19 @@ import React from 'react';
 import Card from '../Components/Card';
 import { useCharContext } from '../Components/utils/global.context';   
 
-const Home = ({users}) => {
+const Home = () => {
   const { state } = useCharContext()
-
   return (
-    <div className='card-grid'>
-      <h1>Home</h1>
-      {state.list && state.list.map(dentist => (
+    <div>
+     <h1>Home</h1>
+      {state.list && state.list.map(users => (
+         
           <Card
             users={users}
-            key={dentist.id}
-            id={dentist.id}
-            name={dentist.name}
-            username={dentist.username}
+            key={users.id}
+            id={users.id}
+            name={users.name}
+            username={users.username}
           />
         ))}
       </div>

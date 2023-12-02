@@ -23,7 +23,7 @@ const Card = ({users, name, username, id }) => {
   return (
     <div className="card-grid" >
       
-      <Link to={`/dentist/${id}`}>Ver Dentista</Link>
+      <Link to={'/detail' + users.id}>Ver Dentista</Link>
       <h2>{users.name}</h2>
       <p>Username: {users.username}</p>
       <button onClick={addFav} className="favButton">Add fav</button>
